@@ -8,8 +8,9 @@
     "preinstall": "npx only-allow pnpm",
     "dev": "pnpm firebase emulators:exec 'next dev --turbopack'",
     "build": "next build",
+    "build:test": "NODE_ENV=test pnpm build",
     "build:analyze": "ANALYZE=true pnpm build",
-    "test:e2e": "pnpm firebase emulators:exec 'playwright test'",
+    "test:e2e": "NODE_ENV=test pnpm firebase emulators:exec 'playwright test'",
     "start": "next start",
     "lint": "next lint"
   },

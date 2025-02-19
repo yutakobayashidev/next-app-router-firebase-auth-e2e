@@ -11,7 +11,7 @@ export default async function Page() {
       <div>
         {user ? (
           <div>
-            <p>Welcome, {user.displayName}!</p>
+            <p>Welcome</p>
             <div>{JSON.stringify(user)}</div>
           </div>
         ) : (

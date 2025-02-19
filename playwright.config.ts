@@ -18,6 +18,11 @@ export default defineConfig({
     },
     projects: [
         {
+            name: "setup",
+            testMatch: /.\/e2e\/setup\/.*.ts/,
+            fullyParallel: true,
+        },
+        {
             name: "chrome",
             use: {
                 ...devices["Desktop Chrome"],
@@ -25,7 +30,8 @@ export default defineConfig({
                 launchOptions: {
                     args: [],
                 },
-            }
+            },
+            dependencies: ["setup"],
         },
     ],
 });
