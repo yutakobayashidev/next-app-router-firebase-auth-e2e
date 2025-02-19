@@ -1,5 +1,6 @@
 import { getCurrentUser } from "@/libs/firebase/firebase-admin";
 import Login from "./login";
+import Post from "./post";
 
 export default async function Page() {
   const user = await getCurrentUser();
@@ -18,6 +19,7 @@ export default async function Page() {
           <p>Please sign in to continue.</p>
         )}
       </div>
+      <Post />
     </div>
   );
 }
