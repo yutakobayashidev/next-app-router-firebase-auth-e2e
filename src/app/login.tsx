@@ -1,5 +1,6 @@
 "use client";
 
+import { signout } from "@/actions/auth";
 import { signInWithGoogle } from "@/libs/firebase/auth";
 import { useRouter } from "next/navigation";
 
@@ -14,5 +15,16 @@ export default function Login() {
     }
   };
 
-  return <button onClick={onGoogleLogin}>Sign in with Google</button>;
+  const handleSignout = async () => {
+    await signout();
+
+    router.refresh();
+  };
+
+  return (
+    <div>
+      <button onClick={onGoogleLogin}>Sign in with Google</button>
+      <button onClick={handleSignout}>Sign out</button>
+    </div>
+  );
 }
